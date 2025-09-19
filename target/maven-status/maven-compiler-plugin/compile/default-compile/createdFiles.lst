@@ -1,0 +1,12 @@
+com\philDo\stuget\config\DataSourceConfig.class
+com\philDo\stuget\StugetApplication.class
+com\philDo\stuget\mapper\testMapper.class
+com\philDo\stuget\config\WebConfig.class
+com\philDo\stuget\service\testServiceImpl.class
+com\philDo\stuget\service\testService.class
+com\philDo\stuget\controller\CustomErrorController.class
+com\philDo\stuget\model\testModel.class
+com\philDo\stuget\config\MySqlConfig.class
+com\philDo\stuget\controller\testController2.class
+com\philDo\stuget\config\WebConfig$1.class
+com\philDo\stuget\controller\testController.class
