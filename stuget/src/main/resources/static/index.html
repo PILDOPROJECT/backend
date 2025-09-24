@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test title</title>
+</head>
+<body>
+	<a href="/test/test">test to spring boot!</a>
+	
+	<!--action url로,post method방식을 통해 입력값이 넘어간다.(콘트롤러의 @postMapping에서 받음) -->
+  <form action="/test" method="post">
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+    </div>
+    <button type="submit">등록</button>
+  </form>
+  
+  
+    <div id="contents">
+    </div>
+	
+</body>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--     <script>
+        $.ajax({
+            type: "GET",
+            url: "/valueTest",
+            success: (data) => {
+            console.log(data);
+            $('#contents').html(data);
+            }
+        });
+    </script> -->
+    
+</html>

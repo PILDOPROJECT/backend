@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>test page</title>
+</head>
+<body>
+<table border="1">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="list : ${list}">
+                    <td th:text="${list.title}"></td>
+                    <td th:text="${list.name}"></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>
