@@ -7,7 +7,7 @@ import lombok.ToString;
 /*모임 테이블*/
 /*
 CREATE TABLE `CREW_TB` (
-	`CREW_ID`			INT				NOT NULL,
+	`CREW_SQ`			INT				NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`USER_SQ`			INT				NOT NULL, 
 	`CREW_TYPE`			CHAR(2)			NOT NULL,
 	`CREW_NAME`			VARCHAR(20)		NULL,     
@@ -30,7 +30,7 @@ CREATE TABLE `CREW_TB` (
 /*모임 테이블 PK 설정*/
 /*
 ALTER TABLE `CREW_TB` ADD CONSTRAINT `PK_CREW_TB` PRIMARY KEY (
-	`CREW_ID`,
+	`CREW_SQ`,
 	`USER_SQ`
 );
 );*/
@@ -39,7 +39,7 @@ ALTER TABLE `CREW_TB` ADD CONSTRAINT `PK_CREW_TB` PRIMARY KEY (
 @Setter
 @ToString
 public class CrewVO {
-	private int		crewId;            /*모임 번호*/                                                                                                                        
+	private int		crewSq;            /*모임 번호*/                                                                                                                        
 	private int 	userSq;            /*회원 번호*/                                                                                                                        
 	private String  crewType;          /*모임 종류 - 일반=00, 스포츠=01, 스터디=02, 독서=03, 반려동물=04, 임신/육아=05, 생활/편의=06, 고민/사연=078, 동네친구=08, 영화/드라마=09, 여행=10*/                      
 	private String  crewName;          /*모임 이름*/                                                                                                                        

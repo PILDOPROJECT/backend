@@ -7,7 +7,7 @@ import lombok.ToString;
 /*모임 회원 테이블*/
 /*
 CREATE TABLE `CREW_USER_TB` (
-	`CREW_ID`		INT			NOT NULL,	
+	`CREW_SQ`		INT			NOT NULL,	
 	`USER_SQ`		INT			NOT NULL,	
 	`USER_NAME`		VARCHAR(10)	NULL,		
 	`JOIN_DATE`		DATETIME	NULL,		
@@ -28,7 +28,7 @@ ALTER TABLE `CREW_USER_TB` ADD CONSTRAINT `PK_CREW_USER_TB` PRIMARY KEY (
 @Setter
 @ToString
 public class CrewUserVO {
-	private int		crewId;         /*모임 번호*/                       
+	private int		crewSq;         /*모임 번호*/                       
 	private int 	userSq;         /*회원 번호*/                 
 	private String  userName;       /*회원 이름*/                              
 	private String  joindate;       /*모임 참여일*/               

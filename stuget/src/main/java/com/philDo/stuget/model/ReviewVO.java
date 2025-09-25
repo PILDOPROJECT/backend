@@ -7,8 +7,8 @@ import lombok.ToString;
 /*후기 테이블*/
 /*
 CREATE TABLE `REVIEW_TB` (
-	`REV_ID`		INT				NOT null,	
-	`CREW_ID`		INT				NOT NULL,	
+	`REV_ID`		INT				NOT null AUTO_INCREMENT PRIMARY KEY,	
+	`CREW_SQ`		INT				NOT NULL,	
 	`REV_TITLE`		VARCHAR(100)	NULL,		
 	`REV_DETAIL`	VARCHAR(100)	NULL,       
 	`REV_SCO`		CHAR(2)			NULL,		
@@ -31,7 +31,7 @@ ALTER TABLE `REVIEW_TB` ADD CONSTRAINT `PK_REVIEW_TB` PRIMARY KEY (
 @ToString
 public class ReviewVO {
 	private int		revId;          /*후기번호*/   
-	private int 	crewId;         /*모임번호*/  
+	private int 	crewSq;         /*모임번호*/  
 	private String  revTitle;       /*후기제목*/          
 	private String  revDetail;      /*후기 내용*/  
 	private String  revSco;         /*후기 평점*/  
