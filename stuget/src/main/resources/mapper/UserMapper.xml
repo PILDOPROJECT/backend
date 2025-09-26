@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.philDo.stuget.mapper.UserMapper">
+	<select id="getCrewList" resultType="com.philDo.stuget.model.CrewVO" resultMap="crewListResult">
+		select CT.CREW_SQ
+			 , CT.USER_SQ
+			 , CT.CREW_TYPE
+			 , CT.CREW_NAME
+			 , CT.CREW_LOC
+			 , CT.CREW_LOCDT
+			 , CT.CREW_MIN
+			 , CT.CREW_MAX
+			 , CT.CREW_ACCNUM
+			 , CT.CREW_ACCNAME
+			 , CT.CREW_CDATE
+			 , CT.CREW_STDATE
+			 , CT.CREW_FDATE
+			 , CT.CREW_DDAY
+			 , CT.CREW_ENDDATE
+			 , CT.CREW_ADJSUC
+			 , CT.CREW_ADJSUCDATE
+			 , UT.USER_SQ
+		     , UT.USER_ID
+		     , UT.USER_NAME
+		     , UT.USER_EMAIL
+		     , UT.USER_LOC
+		     , UT.USER_LOCDT
+		     , UT.USER_CELLPHONE
+		     , UT.USER_GENDER
+		     , UT.USER_BIRTH
+		     , UT.USER_TYPE
+		     , UT.USER_ACCNUM
+		     , UT.USER_ACCNAME
+		     , UT.USER_CREWYN
+		     , UT.USER_DATETIME
+		     , UT.USER_SCO
+		     , UT.USER_REPORT
+		 from  CREW_TB CT
+			 , USER_TB UT
+		 where 1=1
+		   and CT.USER_SQ = UT.USER_SQ
+			   <if test="USER_SQ != null and USER_SQ != ''">
+					AND UT.USER_SQ = #{USER_SQ}
+			   </if>
+	 group by CT.USER_SQ
+			   , CT.CREW_SQ
+	 order by CT.CREW_SQ;
+	</select>
+	
+  	<!-- 1:N형식의 조인에서는 ORM작업을 직접 표기해야 합니다. -->
+  	<!-- type에는 리턴의 결과 타입, id는 resultMap의 이름 -->
+  	<!-- column은 데이터베이스의 컬럼값, property는 처리할 VO의 속성값(getter) -->
+  	<resultMap type="UserVO" id="getCrewList">
+		<result column="USER_SQ" 		property="userSq"/>
+  		<result column="USER_ID" 		property="userId"/>
+  		<result column="USER_PW" 		property="userPw"/>
+  		<result column="USER_NAME" 		property="userName"/>
+  		<result column="USER_EMAIL"		property="userEmail"/>
+  		<result column="USER_LOC"		property="userLoc"/>
+  		<result column="USER_LOCDT"		property="userLocdt"/>
+  		<result column="USER_CELLPHONE" property="userCellphone"/>
+  		<result column="USER_GENDER" 	property="userGender"/>
+  		<result column="USER_BIRTH" 	property="userBirth"/>
+  		<result column="USER_TYPE" 		property="userType"/>
+  		<result column="USER_ACCNUM" 	property="userAccNum"/>
+  		<result column="USER_ACCNAME" 	property="userACCname"/>
+  		<result column="USER_CREWYN" 	property="userCrewyn"/>
+  		<result column="USER_DATETIME" 	property="userDatetime"/>
+  		<result column="USER_SCO" 		property="userSco"/>
+  		<result column="USER_REPORT" 	property="userReprot"/>
+  		<collection property="crewList" resultMap="crewListResult"/>
+  	</resultMap>
+  	
+  	<resultMap type="CrewVO" id="crewListResult">
+  		<result column="CREW_SQ"  		 property="crewSq"/>        
+  		<result column="USER_SQ"  		 property="userSq"/>        
+  		<result column="CREW_TYPE"		 property="crewType"/>      
+  		<result column="CREW_NAME" 		 property="crewName"/>      
+  		<result column="CREW_LOC"  		 property="crewLoc"/>       
+  		<result column="CREW_LOCDT"		 property="crewLocdt"/>     
+  		<result column="CREW_MIN" 		 property="crewMin"/>       
+  		<result column="CREW_MAX"		 property="crewMam"/>       
+  		<result column="CREW_ACCNUM"	 property="crewAccnum"/>    
+  		<result column="CREW_ACCNAME"	 property="crewAccname"/>   
+  		<result column="CREW_CDATE" 	 property="crewCdate"/>     
+  		<result column="CREW_STDATE" 	 property="crewStdate"/>    
+  		<result column="CREW_FDATE" 	 property="crewFdate"/>     
+  		<result column="CREW_DDAY" 		 property="crewDdya"/>      
+  		<result column="CREW_ENDDATE"	 property="crewEnddate"/>   
+  		<result column="CREW_ADJSUC" 	 property="crewAdjsuc"/>    
+  		<result column="CREW_ADJSUCDATE" property="crewAdjsucdate"/>
+  	</resultMap>
+</mapper>
+

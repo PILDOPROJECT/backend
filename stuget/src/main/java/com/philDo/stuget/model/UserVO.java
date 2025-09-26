@@ -1,5 +1,7 @@
 package com.philDo.stuget.model;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -54,5 +56,7 @@ public class UserVO {
 	private String  userDatetime;    /*가입일자ㅣ*/                  
 	private String  userSco;         /*회원 평점*/                  
 	private String  userReprot;      /*신고여부 신고x=0, 신고ㅇ=1*/      
-
+	
+//	join을 위한 crew_tb 리스트
+	private List<CrewVO> crewList;
 }

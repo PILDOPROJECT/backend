@@ -55,6 +55,23 @@ public class CrewVO {
 	private String  crewDdya;          /*모임일*/                                                                                                                          
 	private String  crewEnddate;       /*모임 종료일*/                                                                                                                       
 	private String  crewAdjsuc;        /*정산완료여부*/                                                                                                                       
-	private String  crewAdjsucdate;    /*정산 완료일*/                                                                                                                       
+	private String  crewAdjsucdate;    /*정산 완료일*/      
+	
+//	join을 위한 user_tb 컬럼
+	private String  userId;          /*회원아이디*/                  
+	private String  userName;        /*회원이름*/                   
+	private String  userEmail;       /*이메일*/                    
+	private String  userLoc;         /*기본주소*/                   
+	private String  userLocdt;       /*상세주소*/                   
+	private String  userCellphone;   /*전화번호*/                   
+	private String  userGender;      /*성별*/                     
+	private String  userBirth;       /*생년월일YYYYMMDD*/           
+	private String  userType;        /*구분 admin=0, user=1*/     
+	private String  userAccNum;      /*계좌번호*/                   
+	private String  userACCname;     /*계좌은행*/                   
+	private String  userCrewyn;      /*모임가입여부 미가입=0, 가입=1*/     
+	private String  userDatetime;    /*가입일자ㅣ*/                  
+	private String  userSco;         /*회원 평점*/                  
+	private String  userReprot;      /*신고여부 신고x=0, 신고ㅇ=1*/
 
 }

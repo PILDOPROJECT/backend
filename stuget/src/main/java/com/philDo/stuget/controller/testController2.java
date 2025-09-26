@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.philDo.stuget.model.CrewVO;
 //import com.philDo.stuget.mapper.testDAO;
 import com.philDo.stuget.model.testModel;
+import com.philDo.stuget.service.UserService;
 import com.philDo.stuget.service.testService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,8 +28,26 @@ public class testController2 {
 	
 	@Autowired
 	private testService testService;
+	private UserService userService;
 	
 
+//	@GetMapping("/test")
+//	public ModelAndView getTestModels() throws Exception {
+//		
+//		System.out.println("getmapping test!");		
+//
+//		ModelAndView mv = new ModelAndView("/user/test");
+//		
+//		List<testModel> list = testService.seleTestModels();
+//		
+//		System.out.println("list : " + list);		
+//		
+//		mv.addObject("list",list);
+//		
+//		return mv;
+//	}
+	
+	
 	@GetMapping("/test")
 	public ModelAndView getTestModels() throws Exception {
 		
@@ -34,7 +55,7 @@ public class testController2 {
 
 		ModelAndView mv = new ModelAndView("/user/test");
 		
-		List<testModel> list = testService.seleTestModels();
+		List<CrewVO> list = userService.getCrewList();
 		
 		System.out.println("list : " + list);		
 		
