@@ -17,7 +17,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<CrewVO> getCrewList() throws Exception {
+		System.out.println("1111111111111111111111111111!");
 		List<CrewVO> list = userMapper.getCrewList();
+		for(int i=0; i<list.size(); i++) {
+			System.out.println(i + "번째 리스트" + list.get(i));
+		}
 		return list;
 	}
 

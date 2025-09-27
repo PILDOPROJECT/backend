@@ -12,5 +12,5 @@ import com.philDo.stuget.model.CrewVO;
 public interface UserMapper {
 	
 //	crew_tb 리스트 조회
-	public List<CrewVO> getCrewList();
+	List<CrewVO> getCrewList();
 }

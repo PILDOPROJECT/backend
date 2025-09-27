@@ -46,13 +46,13 @@ public class CrewVO {
 	private String  crewLoc;           /*모임 지역*/                                                                                                                        
 	private String  crewLocdt;         /*모임 상세 지역*/                                                                                                                     
 	private int  	crewMin;           /*모임 최소 인원*/                                                                                                                     
-	private int  	crewMam;           /*모임 최대 인원*/                                                                                                                     
+	private int  	crewMax;           /*모임 최대 인원*/                                                                                                                     
 	private String  crewAccnum;        /*모임 대표 계좌*/                                                                                                                     
 	private String  crewAccname;       /*모임 대표 개좌 은행*/                                                                                                                  
 	private String  crewCdate;         /*모임 생성일*/                                                                                                                       
 	private String  crewStdate;        /*모임 모집일*/                                                                                                                       
 	private String  crewFdate;         /*모임 종료일*/                                                                                                                       
-	private String  crewDdya;          /*모임일*/                                                                                                                          
+	private String  crewDday;          /*모임일*/                                                                                                                          
 	private String  crewEnddate;       /*모임 종료일*/                                                                                                                       
 	private String  crewAdjsuc;        /*정산완료여부*/                                                                                                                       
 	private String  crewAdjsucdate;    /*정산 완료일*/      

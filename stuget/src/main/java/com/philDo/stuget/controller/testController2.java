@@ -31,23 +31,6 @@ public class testController2 {
 	private UserService userService;
 	
 
-//	@GetMapping("/test")
-//	public ModelAndView getTestModels() throws Exception {
-//		
-//		System.out.println("getmapping test!");		
-//
-//		ModelAndView mv = new ModelAndView("/user/test");
-//		
-//		List<testModel> list = testService.seleTestModels();
-//		
-//		System.out.println("list : " + list);		
-//		
-//		mv.addObject("list",list);
-//		
-//		return mv;
-//	}
-	
-	
 	@GetMapping("/test")
 	public ModelAndView getTestModels() throws Exception {
 		
@@ -55,7 +38,7 @@ public class testController2 {
 
 		ModelAndView mv = new ModelAndView("/user/test");
 		
-		List<CrewVO> list = userService.getCrewList();
+		List<testModel> list = testService.seleTestModels();
 		
 		System.out.println("list : " + list);		
 		
@@ -63,6 +46,23 @@ public class testController2 {
 		
 		return mv;
 	}
+	
+	
+//	@GetMapping("/test")
+//	public ModelAndView getTestModels() throws Exception {
+//		
+//		System.out.println("getmapping test!");		
+//
+//		ModelAndView mv = new ModelAndView("/user/test");
+//		
+//		List<CrewVO> list = userService.getCrewList();
+//		
+//		System.out.println("list : " + list);		
+//		
+//		mv.addObject("list",list);
+//		
+//		return mv;
+//	}
 	
 	@GetMapping("/test2")
 	public List<testModel> getTestModels2() throws Exception {

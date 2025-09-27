@@ -23,7 +23,7 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping("/getCrewList")
-	public List<CrewVO> getTestModels2(@RequestParam String userSq) throws Exception {
+	public List<CrewVO> getCrewList(@RequestParam(required = false) String userSq) throws Exception {
 		
 		System.out.println("getmappling getTestModels2!!!!");
 		List<CrewVO> crewList = userService.getCrewList();
